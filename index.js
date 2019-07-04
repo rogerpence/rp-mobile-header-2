@@ -4,8 +4,8 @@ autoboundEventHandlers.addEventHandler('toggleNavMenu', (e) => {
     const hamburger = document.querySelector('.hamburger');
     hamburger.classList.toggle('is-active');
 
-    const links = document.querySelector('.links');
-    links.classList.toggle('show-links');
+    const links = document.querySelector('.mobile-info-panel');
+    links.classList.toggle('mobile-info-panel-show');
 });
 
 assignAutoboundEventHandlers();
