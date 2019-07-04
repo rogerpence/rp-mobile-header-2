@@ -5,8 +5,7 @@
     --hamburger-color: #514b5b;
   }
   
-  
-  /*!
+    /*!
    * Hamburgers
    * @description Tasty CSS-animated hamburgers
    * @author Jonathan Suh @jonsuh
@@ -82,8 +81,8 @@
     
   
   /*
-       * Slider
-       */
+    Slider
+  */
   .hamburger--slider .hamburger-inner {
     top: 2px;
   }
