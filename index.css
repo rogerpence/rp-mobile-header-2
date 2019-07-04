@@ -129,11 +129,18 @@ header {
     display: block;
 }
 
-div.hamburger {
+div.hamburger-container {
+   outline: none;
    position: absolute;
    left: 10px;
-   top: 24px;
+   top: 16px;
 }
+
+
+div.hamburger-container a {
+    outline: none;
+    color: #514b5b;
+ }
 
 #nav-toggle span, 
 #nav-toggle span:before,
