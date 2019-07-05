@@ -1,4 +1,4 @@
-:root {
+.hamburger {
     --hamburger-width: 30px;
     --hamburger-height: 24px;
     --hamburger-padding: 3px;
@@ -44,7 +44,7 @@
   
   .hamburger-box {
     width: var(--hamburger-width);
-    height: 2410px;
+    height: 24px;
     display: inline-block;
     position: relative;
   }

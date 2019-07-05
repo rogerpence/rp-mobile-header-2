@@ -1,0 +1,138 @@
+/*
+ | Main CSS
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$primary-bg-color: #514b5b;
+$secondary-bg-color: #c4c4c4;
+
+:root {
+    --primary-bg-color: #{$primary-bg-color};    
+    --secondary-bg-color: #{$secondary-bg-color};    
+}
+
+@import 'css-components/reset';
+@import 'css-components/general-mixins';
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+}
+
+div.line {
+    background-color: #514b5b;
+    height: .5em;
+}
+
+/* Mobile header */
+
+
+.large-header {
+    display: none;
+}
+
+
+/* Mobile info panel */
+.mobile-info-panel {
+    // background-color: #919191;
+    background-color: darken($secondary-bg-color, 20%);
+    height: 0;
+    overflow: hidden;
+    transition: height 300ms ease-in;
+    border-top: 2px #514b5b solid;
+
+    .mobile-info-panel-inner-container {
+        padding-top: 10px;
+        display: grid;
+        grid-template-areas: "links links" "avatar bio";
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-row-gap: 1em;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+}
+
+.mobile-info-panel-show {
+    height: 90px;
+}
+
+.avatar-container {
+    grid-area: avatar;
+    padding-left: 1em;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-top: 1em;
+}
+
+.small-icon {
+    width: 2em;
+}
+
+.links {
+    grid-area: links;
+    @include center-row-elements;
+    margin-top: .5em;
+    font-size: 1.6em;
+    background-color: #919191;
+}
+
+.links a {
+    display: flex;
+    justify-items: center;
+    align-items: center; 
+    flex-direction: column;
+    
+    font-size: .8em;
+    color: black;
+    text-decoration: none;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.bio {
+    grid-area: bio;
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+
+div.hamburger-container {
+    outline: none;
+    position: absolute;
+    left: 10px;
+    top: 16px;
+}
+
+div.hamburger-container a {
+    outline: none;
+    color: #514b5b;
+}
+
+.round-full {
+    border-radius: 50%;
+}
+
+.go {
+    border: 1px dashed red;
+}
+
+@media only screen and (min-width: 720px) {
+    .mobile-header,
+    mobile-info-panel {
+        display: none;
+    }
+    .large-header {
+        display: block;
+    }
+    .mobile-info-panel-show {
+        display: none;
+    }
+}
+
+@import 'css-components/hamburgers';
+@import 'css-components/mobile-header';

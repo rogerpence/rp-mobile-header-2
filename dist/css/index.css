@@ -1,0 +1,345 @@
+/*
+ | Main CSS
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+:root {
+  --primary-bg-color: #514b5b;
+  --secondary-bg-color: #c4c4c4;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+div.line {
+  background-color: #514b5b;
+  height: .5em;
+}
+
+/* Mobile header */
+.large-header {
+  display: none;
+}
+
+/* Mobile info panel */
+.mobile-info-panel {
+  background-color: #919191;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 300ms ease-in;
+  transition: height 300ms ease-in;
+  border-top: 2px #514b5b solid;
+}
+
+.mobile-info-panel .mobile-info-panel-inner-container {
+  padding-top: 10px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "links links" "avatar bio";
+  -ms-grid-columns: auto minmax(0, 1fr);
+      grid-template-columns: auto minmax(0, 1fr);
+  grid-row-gap: 1em;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-info-panel-show {
+  height: 90px;
+}
+
+.avatar-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: avatar;
+  padding-left: 1em;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-top: 1em;
+}
+
+.small-icon {
+  width: 2em;
+}
+
+.links {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: links;
+  /* Center row elements with flex */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: .5em;
+  font-size: 1.6em;
+  background-color: #919191;
+}
+
+.links a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: .8em;
+  color: black;
+  text-decoration: none;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.bio {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: bio;
+  padding: 0 20px;
+  font-size: 1.2em;
+}
+
+div.hamburger-container {
+  outline: none;
+  position: absolute;
+  left: 10px;
+  top: 16px;
+}
+
+div.hamburger-container a {
+  outline: none;
+  color: #514b5b;
+}
+
+.round-full {
+  border-radius: 50%;
+}
+
+.go {
+  border: 1px dashed red;
+}
+
+@media only screen and (min-width: 720px) {
+  .mobile-header,
+  mobile-info-panel {
+    display: none;
+  }
+  .large-header {
+    display: block;
+  }
+  .mobile-info-panel-show {
+    display: none;
+  }
+}
+
+.hamburger {
+  --hamburger-width: 30px;
+  --hamburger-height: 24px;
+  --hamburger-padding: 3px;
+  --hamburger-color: #514b5b;
+}
+
+/*!
+   * Hamburgers
+   * @description Tasty CSS-animated hamburgers
+   * @author Jonathan Suh @jonsuh
+   * @site https://jonsuh.com/hamburgers
+   * @link https://github.com/jonsuh/hamburgers
+   */
+.hamburger {
+  padding: var(--hamburger-padding);
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--hamburger-color);
+}
+
+.hamburger-box {
+  width: var(--hamburger-width);
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: var(--hamburger-width);
+  height: 4px;
+  background-color: var(--hamburger-color);
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+    Slider
+  */
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
+          transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  -webkit-transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+          transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  -webkit-transform: translate3d(0, -20px, 0) rotate(-90deg);
+          transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+.mobile-header {
+  background-color: var(--secondary-bg-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.mobile-header .blog-title {
+  padding: .4em 0;
+  font-size: 2.2em;
+}
+
+.mobile-header .search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: .9em;
+}
+
+.mobile-header .search-container img {
+  margin-left: -16px;
+  cursor: pointer;
+}
+
+.mobile-header .search-container input:focus {
+  font-size: 160%;
+}
+
+.mobile-header .search-container input:focus {
+  font-size: 160%;
+}
+
+.mobile-header .tags {
+  padding: .6em 0;
+  font-size: 1.1em;
+}
+/*# sourceMappingURL=index.css.map */
