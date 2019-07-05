@@ -1,0 +1,78 @@
+@media only screen and (min-width: 720px) {
+
+    header {
+        grid-template-areas: 
+            "image links links"
+            "image title search"
+            "image tag   tag";  
+        grid-template-columns: auto repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+
+    .links {
+        border: none;
+        background-color: #c4c4c4;
+    }
+    /*        
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-end;
+        padding-top: .5em;
+    }
+
+    .links a {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+
+    .blog-title {
+    }
+    */
+
+    .tag {
+        font-size: 1.1em;
+        padding-left: .8em;
+    }
+
+    .tag.large {
+        display: block;
+    }
+    
+    .tag.small {
+        display: none;
+    }
+    
+
+/*
+    .search-container {
+        grid-area: search;
+        justify-self: end;
+        display: flex;
+        justify-content: flex-end;   
+        align-items: center; 
+        padding-top: 2px;
+        padding-right: 1em;
+        padding-bottom: 2px;
+        padding-left: 2em; 
+    }
+    
+    .search-container img {   
+        margin-left: -16px;
+        cursor: pointer;
+    }
+    
+    .search-container input {
+        border: none;
+        background-color: lightgray;
+        font-size: 130%;
+        padding: 2px;
+        padding-left: 8px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;   
+        width: 100%; 
+        transition: width 500ms ease;
+    }    */
+} 

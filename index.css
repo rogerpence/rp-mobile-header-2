@@ -32,7 +32,7 @@ div.line {
 
 .mobile-header .blog-title {
     padding: .4em 0;
-    font-size: 2.8em;
+    font-size: 2.2em;
 }
 
 .mobile-header .search-container {
@@ -67,7 +67,7 @@ div.line {
 
 .mobile-header .tags {
     padding: .6em 0;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 /* Mobile info panel */
@@ -77,7 +77,6 @@ div.line {
     overflow: hidden;    
     transition: height 300ms ease-in;
     border-top: 2px #514b5b solid;    
-
 }    
 
 .mobile-info-panel-inner-container {    
@@ -159,5 +158,8 @@ div.hamburger-container a {
         display: block;
     }
 
+    .mobile-info-panel-show {
+        display: none;
+    }
+    
 }
- 
